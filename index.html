@@ -9,9 +9,7 @@
     <meta property="og:title" content="SoftHair AI - Inteligencia para el Retail de Belleza">
     <meta property="og:description" content="Aumente su tasa de conversión y obtenga datos de mercado sin precedentes con nuestro sistema de diagnóstico inteligente.">
     <meta property="og:image" content="https://i.imgur.com/g8e8s1g.png">
-    <meta property="og:url" content="URL_DE_TU_PAGINA_VERCEL">
     <meta name="twitter:card" content="summary_large_image">
-
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,8 +34,6 @@
         .text-center { text-align: center; }
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem auto; }
         .grid { display: grid; gap: 2rem; }
-        .on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .on-scroll.is-visible { opacity: 1; transform: translateY(0); }
         .header { padding: 1rem 0; background-color: rgba(255, 255, 255, 0.9); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
         .header .container { display: flex; justify-content: space-between; align-items: center; }
         .header-logo { font-size: 1.5rem; font-weight: 800; } .header-logo span { color: var(--color-primary); }
@@ -46,40 +42,36 @@
         .header-nav a.active { color: var(--color-primary); } .header-nav a.active::after { width: 100%; }
         .btn { display: inline-block; background: linear-gradient(45deg, var(--color-primary), #2980b9); color: var(--color-white); padding: 0.85rem 2.5rem; border-radius: 9999px; font-weight: 700; border: none; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(52, 152, 219, 0.3); }
+        .btn-secondary { background: var(--color-white); color: var(--color-primary); border: 1px solid var(--color-primary); }
         .card { background-color: var(--color-white); border: 1px solid var(--color-border); border-radius: 0.75rem; padding: 2rem; box-shadow: var(--shadow-sm); }
-        .card h4 { display: flex; align-items: center; gap: 0.75rem; } .card svg { color: var(--color-primary); flex-shrink: 0; }
         .bg-white { background-color: var(--color-white); }
+        .price-card { text-align: center; height: 100%; display: flex; flex-direction: column; }
+        .price-card.featured { border: 2px solid var(--color-primary); position: relative; transform: scale(1.05); z-index: 10; }
+        .price-card ul { list-style: none; padding: 0; margin-top: 1.5rem; text-align: left; }
+        .price-card ul li { margin-bottom: 0.75rem; }
+        .team-card { text-align: center; }
+        .team-card img { border-radius: 50%; margin: 0 auto 1rem auto; border: 4px solid var(--color-white); box-shadow: var(--shadow-md); }
+        .team-card .role { color: var(--color-primary); font-weight: 700; margin-top: -0.5rem; }
+        .chart-container { background-color: var(--color-white); padding: 2rem; border-radius: 0.75rem; box-shadow: var(--shadow-sm); height: 400px; }
         .footer { background-color: var(--color-text); color: #aeb9c5; text-align: center; padding: 2rem 0; }
-        /* --- Estilos de Secciones Específicas --- */
         #hero { padding: 8rem 0; position: relative; color: var(--color-white); }
-        #hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(44, 62, 80, 0.6); z-index: 1; }
+        #hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(44, 62, 80, 0.7); z-index: 1; }
         #hero .container { position: relative; z-index: 2; }
         #hero h2 { color: var(--color-white); }
         #hero p { color: rgba(255, 255, 255, 0.9); }
-        #quiz-container { background-color: var(--color-white); border-radius: 0.75rem; padding: 2.5rem; box-shadow: var(--shadow-md); max-width: 800px; margin: auto; min-height: 500px; display: flex; flex-direction: column; justify-content: center; text-align: center; transition: all 0.3s ease; }
-        .quiz-step-indicator { font-weight: 600; color: var(--color-primary); margin-bottom: 0.5rem; }
-        .quiz-question-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; }
+        #quiz-container { background-color: var(--color-white); border-radius: 0.75rem; padding: 2.5rem; max-width: 500px; min-height: 500px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+        .quiz-question-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; }
         .quiz-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
         .quiz-option-btn { background-color: var(--color-white); border: 2px solid var(--color-border); padding: 0.75rem 1.5rem; border-radius: 9999px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
-        .quiz-option-btn:hover, .quiz-option-visual:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateY(-2px); }
-        .quiz-option-btn.selected, .quiz-option-visual.selected { border-color: var(--color-secondary); background-color: #f0fbf8; }
+        .quiz-option-btn.selected, .quiz-option-visual.selected { border-color: var(--color-secondary) !important; background-color: #f0fbf8; }
         .quiz-option-visual { cursor: pointer; border: 2px solid var(--color-border); border-radius: 0.5rem; padding: 1rem; transition: all 0.2s ease; text-align: center; flex-basis: 150px; flex-grow: 1; }
-        .quiz-option-visual svg { margin: 0 auto 0.5rem auto; display: block; }
-        .quiz-result-grid { display: grid; gap: 2rem; text-align: left; }
+        .quiz-option-visual svg { margin: 0 auto 0.5rem auto; display: block; stroke: var(--color-primary); }
         .result-section { background-color: var(--color-base); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--color-primary); }
-        .result-section h5 { margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 700; }
-        .product-card { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; }
-        .product-card-img { flex-shrink: 0; width: 60px; height: 60px; background-color: var(--color-secondary); border-radius: 50%; }
-        .testimonial-card { text-align: center; }
-        .testimonial-card blockquote { font-style: italic; font-size: 1.1rem; color: #5a6877; border-left: 3px solid var(--color-primary); padding-left: 1.5rem; text-align: left; margin: 0 0 1rem 0; }
-        .testimonial-card .author { font-weight: 700; }
         .faq-item { border-bottom: 1px solid var(--color-border); padding: 1.5rem 0; }
-        .faq-item summary { font-weight: 600; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-item summary::after { content: '+'; font-size: 1.5rem; transition: transform 0.2s; }
-        .faq-item[open] summary::after { content: '-'; }
+        .faq-item summary { font-weight: 600; font-size: 1.1rem; cursor: pointer; }
         .spinner { border: 4px solid rgba(0, 0, 0, 0.1); width: 48px; height: 48px; border-radius: 50%; border-left-color: var(--color-primary); animation: spin 1s ease infinite; margin: 2rem auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        @media (min-width: 768px) { .grid-cols-md-2 { grid-template-columns: repeat(2, 1fr); } .grid-cols-md-3 { grid-template-columns: repeat(3, 1fr); } .quiz-result-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 768px) { .grid-cols-md-2 { grid-template-columns: repeat(2, 1fr); } .grid-cols-md-3 { grid-template-columns: repeat(3, 1fr); } }
     </style>
 </head>
 <body>
@@ -91,6 +83,7 @@
                 <a href="#problema">El Problema</a>
                 <a href="#solucion">Solución</a>
                 <a href="#modelo">Planes</a>
+                <a href="#equipo">Equipo</a>
                 <a href="#dashboard">Dashboard</a>
                 <a href="#contacto">Contacto</a>
             </nav>
@@ -98,7 +91,7 @@
     </header>
 
     <main>
-        <section id="hero" style="background-image: url('https://source.unsplash.com/1600x900/?beauty,salon,cosmetics'); background-size: cover; background-position: center center;">
+        <section id="hero" style="background-image: url('https://source.unsplash.com/1600x900/?cosmetics,lab,technology'); background-size: cover; background-position: center center;">
             <div class="container text-center">
                 <h2 style="font-size: 3.5rem;">Transforme la Confusión de sus Clientes en su Mayor Activo</h2>
                 <p style="font-size: 1.25rem; max-width: 700px; margin: 1rem auto 2.5rem auto;">Nuestra plataforma de IA se integra en sus canales de venta para convertir la incertidumbre del cliente en una venta segura y, a la vez, en un activo de datos sin precedentes.</p>
@@ -108,18 +101,18 @@
 
         <section id="problema" class="bg-white">
             <div class="container">
-                <div class="section-header on-scroll">
+                <div class="section-header">
                     <h3>El Problema: Un Mercado que Opera a Ciegas</h3>
                     <p>En el competitivo retail de belleza, cada cliente indeciso es una venta perdida. La falta de un asesoramiento certero en el punto de venta, tanto físico como online, genera frustración y reduce drásticamente el potencial de conversión.</p>
                 </div>
                 <div class="grid grid-cols-md-2">
-                    <div class="card on-scroll">
+                    <div class="card">
                         <h4><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Para el Consumidor Final</h4>
-                        <p>Abrumado por un exceso de opciones, el cliente compra basándose en intuiciones, lo que resulta en productos inadecuados, insatisfacción y pérdida de confianza en las marcas y tiendas.</p>
+                        <p>Abrumado por un exceso de opciones, el cliente compra basándose en intuiciones, lo que resulta en productos inadecuados, insatisfacción y pérdida de confianza.</p>
                     </div>
-                    <div class="card on-scroll">
+                    <div class="card">
                         <h4><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="12" rx="2"></rect><path d="M7 10V7a5 5 0 0 1 10 0v3"></path></svg>Para su Negocio</h4>
-                        <p>La indecisión del cliente se traduce directamente en carritos abandonados, una baja tasa de conversión y un ticket promedio inferior al potencial, afectando sus resultados finales.</p>
+                        <p>La indecisión del cliente se traduce directamente en carritos abandonados, baja tasa de conversión y un ticket promedio inferior al potencial, afectando sus resultados.</p>
                     </div>
                 </div>
             </div>
@@ -127,50 +120,88 @@
 
         <section id="solucion">
             <div class="container">
-                <div class="section-header on-scroll">
+                <div class="section-header">
                     <h3>La Consulta Capilar de Precisión</h3>
                     <p>Vea cómo nuestra IA guía a sus clientes a través de una consulta experta, visual e intuitiva que finaliza con un protocolo de tratamiento personalizado, aumentando la confianza y la disposición a comprar.</p>
                 </div>
-                <div id="quiz-container" class="on-scroll">
+                <div class="grid grid-cols-md-2" style="align-items: center; gap: 3rem;">
+                    <div style="text-align: center;">
+                        <img src="https://source.unsplash.com/800x1200/?beauty,product,serum" alt="Mujer usando productos cosméticos" style="width: 100%; height: auto; border-radius: 0.75rem; box-shadow: var(--shadow-md);">
                     </div>
+                    <div id="quiz-container">
+                        </div>
+                </div>
             </div>
         </section>
         
         <section id="modelo" class="bg-white">
             <div class="container">
-                <div class="section-header on-scroll">
+                <div class="section-header">
                     <h3>Planes Diseñados para su Crecimiento</h3>
                     <p>Soluciones escalables y sin sorpresas. Elija el plan que mejor se adapte a las necesidades de su negocio hoy.</p>
                 </div>
-                <div class="grid grid-cols-md-3" style="align-items: flex-start;">
-                    <div class="card price-card on-scroll">
-                        <h5>Starter</h5><div class="price">$80<span>/mes</span></div><p>Diseñado para salones y tiendas individuales que buscan digitalizar su asesoramiento.</p><ul><li>✔️ Diagnósticos Ilimitados</li><li>✔️ Reportes de Ventas Básicos</li><li>✔️ Soporte por Email</li></ul>
+                <div class="grid grid-cols-md-3" style="align-items: stretch;">
+                    <div class="card price-card">
+                        <div class="price-card-content">
+                            <h4 style="justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>Starter</h4>
+                            <p>Para digitalizar el asesoramiento en un único punto de venta.</p>
+                            <ul style="margin-top: 2rem;">
+                                <li><strong>Diagnósticos Ilimitados</strong></li>
+                                <li><strong>Reportes de Ventas Básicos</strong></li>
+                                <li><strong>Soporte por Email</strong></li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" class="btn btn-secondary" style="margin-top: 2rem;">Consultar</a>
                     </div>
-                    <div class="card price-card featured on-scroll">
+                    <div class="card price-card featured">
                         <div class="featured-badge">Más Popular</div>
-                        <h5>Business</h5><div class="price">$250<span>/mes</span></div><p>Diseñado para cadenas y retailers que necesitan analítica avanzada para competir.</p><ul><li>✔️ Todo en Starter, y además:</li><li>✔️ **Dashboard de Analítica Avanzada**</li><li>✔️ **Personalización con su Marca**</li><li>✔️ Soporte Prioritario</li></ul>
+                        <div class="price-card-content">
+                             <h4 style="justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>Business</h4>
+                             <p>Para cadenas y retailers que necesitan analítica avanzada para competir.</p>
+                            <ul style="margin-top: 2rem;">
+                               <li><strong>Todo en Starter, y además:</strong></li>
+                               <li>Dashboard de Analítica Avanzada</li>
+                               <li>Personalización con su Marca</li>
+                               <li>Soporte Prioritario</li>
+                           </ul>
+                        </div>
+                         <a href="#contacto" class="btn" style="margin-top: 2rem;">Solicitar Demo</a>
                     </div>
-                    <div class="card price-card on-scroll">
-                         <h5>Enterprise</h5><div class="price">A Consulta</div><p>Soluciones a medida para grandes corporaciones con necesidades de integración específicas.</p><ul><li>✔️ Todo en Business, y además:</li><li>✔️ **Integraciones con su E-commerce/API**</li><li>✔️ Soporte con Mánager Dedicado</li><li>✔️ Paneles de Datos a Medida</li></ul>
+                    <div class="card price-card">
+                         <div class="price-card-content">
+                            <h4 style="justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path><rect x="12" y="12" width="10" height="10" rx="2"></rect></svg>Enterprise</h4>
+                             <p>Soluciones a medida para grandes corporaciones con necesidades de integración.</p>
+                            <ul style="margin-top: 2rem;">
+                               <li><strong>Todo en Business, y además:</strong></li>
+                               <li>Integraciones con su E-commerce/API</li>
+                               <li>Soporte con Mánager Dedicado</li>
+                               <li>Paneles de Datos a Medida</li>
+                           </ul>
+                        </div>
+                        <a href="#contacto" class="btn btn-secondary" style="margin-top: 2rem;">Contactar a Ventas</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials">
-             <div class="container">
-                <div class="section-header on-scroll">
-                    <h3>Validado por Negocios como el Suyo</h3>
-                    <p>Nuestros primeros socios ya están viendo el impacto directo de implementar una venta basada en datos.</p>
+        <section id="equipo">
+            <div class="container">
+                <div class="section-header">
+                    <h3>El Equipo detrás de la Tecnología</h3>
+                    <p>La combinación de visión de producto, estrategia de negocio y marketing digital para llevar SoftHair AI al siguiente nivel.</p>
                 </div>
-                <div class="grid grid-cols-md-2">
-                    <div class="card testimonial-card on-scroll">
-                        <blockquote>"Desde que instalamos el tótem, las ventas de rutinas completas se han disparado. Los clientes se sienten seguros con la recomendación y nuestro equipo puede enfocarse en ofrecer un servicio excelente."</blockquote>
-                        <p class="author">- Dueña de Salón de Belleza Premium</p>
+                <div class="grid grid-cols-md-2" style="max-width: 800px; margin: auto;">
+                    <div class="card team-card">
+                        <img src="https://placehold.co/120x120/3498DB/FFFFFF?text=EA" alt="Foto de Enzo Acosta">
+                        <h4>Enzo Acosta</h4>
+                        <p class="role">Visión de Producto y Estrategia Comercial</p>
+                        <p>Responsable de alinear la tecnología con las necesidades del mercado para maximizar el valor para nuestros socios.</p>
                     </div>
-                     <div class="card testimonial-card on-scroll">
-                        <blockquote>"La integración en nuestro e-commerce fue simple y el resultado inmediato. Vimos una reducción del 15% en el abandono de carritos en la categoría capilar. Los datos que obtenemos son oro puro."</blockquote>
-                        <p class="author">- Gerente de E-commerce, Cadena de Perfumerías</p>
+                    <div class="card team-card">
+                        <img src="https://placehold.co/120x120/2C3E50/FFFFFF?text=MN" alt="Foto de Matias Nitti">
+                        <h4>Matias Nitti</h4>
+                        <p class="role">Marketing y Crecimiento</p>
+                        <p>Experto en la creación de estrategias de marca y adquisición de clientes para negocios SaaS de alto impacto.</p>
                     </div>
                 </div>
             </div>
@@ -178,28 +209,28 @@
 
         <section id="dashboard" class="bg-white">
             <div class="container">
-                <div class="section-header on-scroll">
+                <div class="section-header">
                     <h3>Su Centro de Inteligencia de Negocio</h3>
                     <p>Nuestro Dashboard de Analítica le da una visión sin precedentes de las necesidades de sus clientes. Optimice su stock, personalice sus ofertas y tome decisiones estratégicas basadas en información real.</p>
                 </div>
-                <div class="grid grid-cols-md-3 gap-6 on-scroll">
+                <div class="grid grid-cols-md-3 gap-6">
                     <div class="kpi-card"><div class="kpi-card-value">1,245</div><div class="kpi-card-label">Diagnósticos este mes</div></div>
                     <div class="kpi-card"><div class="kpi-card-value">32%</div><div class="kpi-card-label">Tasa de Conversión</div></div>
                     <div class="kpi-card"><div class="kpi-card-value">+$8,760</div><div class="kpi-card-label">Ventas Atribuidas</div></div>
                 </div>
                 <div class="grid grid-cols-md-2" style="margin-top: 2rem; gap: 2rem;">
-                    <div class="chart-container on-scroll"><canvas id="hairTypeChart"></canvas></div>
-                    <div class="chart-container on-scroll"><canvas id="concernsChart"></canvas></div>
+                    <div class="chart-container"><canvas id="hairTypeChart"></canvas></div>
+                    <div class="chart-container"><canvas id="concernsChart"></canvas></div>
                 </div>
             </div>
         </section>
 
          <section id="faq">
             <div class="container" style="max-width: 800px;">
-                <div class="section-header on-scroll">
+                <div class="section-header">
                     <h3>Preguntas Frecuentes</h3>
                 </div>
-                <div class="on-scroll">
+                <div>
                     <details class="faq-item">
                         <summary>¿La integración con mi e-commerce es complicada?</summary>
                         <p style="padding-top: 1rem;">No. Nuestro sistema se integra con las principales plataformas como Shopify, WooCommerce y otras a través de un simple widget o una API, dependiendo de su plan. Nuestro equipo de soporte le asiste en todo el proceso.</p>
@@ -217,7 +248,7 @@
         </section>
 
         <section id="contacto" style="background-color: #34495e; color: #ecf0f1;">
-            <div class="container text-center on-scroll">
+            <div class="container text-center">
                 <h3>Vea el Poder de los Datos en Acción</h3>
                 <p style="color: #bdc3c7;">Agende una demo. Le mostraremos la plataforma, sus funcionalidades de analítica y cómo se integra en sus operaciones para generar resultados medibles.</p>
                 <div style="margin-top: 2rem;"><a href="mailto:ventas@softhairai.com?subject=Solicitud de Demo de SoftHair AI" class="btn">Agendar mi Demo</a></div>
@@ -235,25 +266,15 @@
             const navLinks = document.querySelectorAll('.header-nav a');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    const id = entry.target.getAttribute('id');
-                    const navLink = document.querySelector(`.header-nav a[href="#${id}"]`);
                     if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                        const id = entry.target.getAttribute('id');
+                        const navLink = document.querySelector(`.header-nav a[href="#${id}"]`);
                         navLinks.forEach(link => link.classList.remove('active'));
                         if (navLink) navLink.classList.add('active');
                     }
                 });
-            }, { rootMargin: '-40% 0px -60% 0px', threshold: 0 });
+            }, { rootMargin: '-40% 0px -60% 0px', threshold: 0.5 });
             sections.forEach(section => observer.observe(section));
-
-            const onScrollObserver = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.on-scroll').forEach(el => onScrollObserver.observe(el));
             
             const quizContainer = document.getElementById('quiz-container');
             const quizSteps = [
@@ -268,68 +289,34 @@
                 { type: 'analyzing' },
                 { type: 'result' }
             ];
-            let currentStep = 0;
-            let userAnswers = {};
-
+            let currentStep = 0; let userAnswers = {};
             const renderQuizStep = () => {
                 if (!quizContainer) return;
-                const stepData = quizSteps[currentStep];
-                let html = '';
+                const stepData = quizSteps[currentStep]; let html = '';
                 const stepIndicator = currentStep > 0 && stepData.type !== 'analyzing' && stepData.type !== 'result' ? `<div class="quiz-step-indicator">PASO ${currentStep} DE ${quizSteps.length - 2}</div>` : '';
-                
                 switch (stepData.type) {
-                    case 'welcome':
-                        html = `<h3 class="quiz-question-title">Inicie su Consulta Capilar de Precisión</h3><p>Nuestro sistema de IA, diseñado por tricólogos, analizará su perfil para crear su rutina ideal. El proceso es rápido, visual y 100% confidencial.</p><button class="btn quiz-action" data-action="start">Comenzar</button>`;
-                        break;
-                    case 'visual-choice':
-                        html = `${stepIndicator}<h4 class="quiz-question-title">${stepData.question}</h4><div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">${stepData.options.map(opt => `<div class="quiz-option-visual quiz-action" data-action="answer" data-value="${opt.value}"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="64" height="64">${opt.svg}</svg><p style="font-weight: 600; margin: 0.5rem 0 0 0;">${opt.label || opt.value}</p></div>`).join('')}</div>`;
-                        break;
-                    case 'text-choice':
-                        html = `${stepIndicator}<h4 class="quiz-question-title">${stepData.question}</h4><div class="quiz-options">${stepData.options.map(opt => `<button class="quiz-option-btn quiz-action" data-action="answer" data-value="${opt}">${opt}</button>`).join('')}</div>`;
-                        break;
-                    case 'analyzing':
-                        html = `<h4 class="quiz-question-title">Analizando su perfil...</h4><div class="spinner"></div><p>Cruzando sus 7 puntos de datos con nuestra base de conocimiento para generar su protocolo personalizado.</p>`;
-                        setTimeout(() => { currentStep++; renderQuizStep(); }, 2500);
-                        break;
-                    case 'result':
-                        html = `<h3 class="quiz-question-title">Su Protocolo Personalizado SoftHair AI</h3>
-                            <div class="quiz-result-grid">
-                                <div class="result-section">
-                                    <h5>Tu Diagnóstico Completo</h5>
-                                    <p>Tras analizar sus respuestas, nuestro sistema IA concluye que su perfil es: <strong>Cabello ${userAnswers.forma}, de estructura ${userAnswers.grosor} y ${userAnswers.densidad} densidad.</strong></p>
-                                    <p>Su cuero cabelludo es <strong>${userAnswers.cuero}</strong> y su historial de <strong>${userAnswers.quimicos}</strong> requiere un enfoque en la ${userAnswers.objetivo === 'Reparar Daño' ? 'reparación' : 'protección'}.</p>
-                                </div>
-                                <div class="result-section">
-                                    <h5>Tu Rutina de Aplicación</h5>
-                                    <p><strong>1. Lavado (2-3 veces/semana):</strong> Aplique el Shampoo Hydro-Nutritivo solo en el cuero cabelludo.</p>
-                                    <p><strong>2. Acondicionamiento:</strong> De medios a puntas, evite la raíz. Deje actuar 2 minutos.</p>
-                                    <p><strong>3. Sellado:</strong> Con el cabello húmedo, aplique 2-3 gotas del Sérum Anti-Frizz.</p>
-                                    <p><strong>Tip Profesional:</strong> Nunca frote su cabello con la toalla. Presione suavemente para quitar el exceso de agua.</p>
-                                </div>
-                                <div class="result-section" style="grid-column: 1 / -1;">
-                                    <h5>Protocolo Recomendado: Kit "Hidratación y Control"</h5>
-                                    <div class="product-card"><div class="product-card-img"></div><div class="product-card-info"><h4>Shampoo Hydro-Nutritivo</h4><p><strong>Ingredientes Clave:</strong> Aceite de Argán (nutrición), Pantenol (Vitamina B5, humectante).</p></div></div>
-                                    <div class="product-card"><div class="product-card-img"></div><div class="product-card-info"><h4>Acondicionador Sellador</h4><p><strong>Ingredientes Clave:</strong> Proteínas de Seda (suavidad), Keratina Vegetal (fortaleza).</p></div></div>
-                                    <div class="product-card"><div class="product-card-img"></div><div class="product-card-info"><h4>Sérum Anti-Frizz</h4><p><strong>Ingredientes Clave:</strong> Ciclometicona (protector térmico), Aceite de Lino (brillo).</p></div></div>
-                                </div>
-                            </div>
-                            <button class="btn quiz-action" data-action="restart" style="margin-top: 2rem;">Realizar otra consulta</button>`;
-                        break;
+                    case 'welcome': html = `<h3 class="quiz-question-title">Inicie su Consulta Capilar de Precisión</h3><p>Nuestro sistema de IA, diseñado por tricólogos, analizará su perfil para crear su rutina ideal.</p><button class="btn quiz-action" data-action="start">Comenzar</button>`; break;
+                    case 'visual-choice': html = `${stepIndicator}<h4 class="quiz-question-title">${stepData.question}</h4><div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">${stepData.options.map(opt => `<div class="quiz-option-visual quiz-action" data-action="answer" data-value="${opt.value}"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="64" height="64">${opt.svg}</svg><p style="font-weight: 600; margin: 0.5rem 0 0 0;">${opt.label || opt.value}</p></div>`).join('')}</div>`; break;
+                    case 'text-choice': html = `${stepIndicator}<h4 class="quiz-question-title">${stepData.question}</h4><div class="quiz-options">${stepData.options.map(opt => `<button class="quiz-option-btn quiz-action" data-action="answer" data-value="${opt}">${opt}</button>`).join('')}</div>`; break;
+                    case 'analyzing': html = `<h4 class="quiz-question-title">Analizando su perfil...</h4><div class="spinner"></div><p>Cruzando sus 7 puntos de datos con nuestra base de conocimiento.</p>`; setTimeout(() => { currentStep++; renderQuizStep(); }, 2500); break;
+                    case 'result': html = `<h3 class="quiz-question-title">Su Protocolo Personalizado</h3><div class="grid grid-cols-md-2" style="text-align: left;">
+                                <div class="result-section"><h5>Tu Diagnóstico Completo</h5><p>Análisis de IA: Su perfil es <strong>Cabello ${userAnswers.forma}</strong>, de estructura <strong>${userAnswers.grosor}</strong> y <strong>${userAnswers.densidad} densidad</strong>. Su cuero cabelludo <strong>${userAnswers.cuero}</strong> y el historial de <strong>${userAnswers.quimicos}</strong> requieren un enfoque en <strong>${userAnswers.objetivo}</strong>.</p></div>
+                                <div class="result-section"><h5>Tu Rutina de Aplicación</h5><p><strong>1. Lavado:</strong> Aplique el Shampoo Hydro-Nutritivo solo en raíces. <strong>2. Acondicionamiento:</strong> De medios a puntas, deje actuar 2 min. <strong>3. Sellado:</strong> Con cabello húmedo, aplique 2-3 gotas del Sérum Anti-Frizz.</p></div>
+                                <div class="result-section" style="grid-column: 1 / -1;"><h5>Protocolo Recomendado: Kit "Hidratación y Control"</h5>
+                                    <div class="product-card"><div class="product-card-img"></div><div><h4>Shampoo Hydro-Nutritivo</h4><p><strong>Ingredientes Clave:</strong> Aceite de Argán, Pantenol.</p></div></div>
+                                    <div class="product-card"><div class="product-card-img"></div><div><h4>Acondicionador Sellador</h4><p><strong>Ingredientes Clave:</strong> Proteínas de Seda, Keratina Vegetal.</p></div></div>
+                                    <div class="product-card"><div class="product-card-img"></div><div><h4>Sérum Anti-Frizz</h4><p><strong>Ingredientes Clave:</strong> Aceite de Lino, Ciclometicona.</p></div></div>
+                                </div></div><button class="btn quiz-action" data-action="restart" style="margin-top: 2rem;">Realizar otra consulta</button>`; break;
                 }
                 quizContainer.innerHTML = html;
             };
-
             quizContainer.addEventListener('click', e => {
                 const target = e.target.closest('.quiz-action');
-                if (!target) return;
-                const { action, value } = target.dataset;
+                if (!target) return; const { action, value } = target.dataset;
                 if (action === 'start' || action === 'answer') {
                     if (action === 'answer') userAnswers[quizSteps[currentStep].key] = value;
-                    currentStep++;
-                    renderQuizStep();
-                } else if (action === 'restart') {
-                    currentStep = 0; userAnswers = {}; renderQuizStep();
-                }
+                    currentStep++; renderQuizStep();
+                } else if (action === 'restart') { currentStep = 0; userAnswers = {}; renderQuizStep(); }
             });
             if(quizContainer) renderQuizStep();
 
