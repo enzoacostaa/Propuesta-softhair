@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftHair AI - Propuesta Definitiva para Inversores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-base: #F8F8FA; --color-text: #2C3E50; --color-primary: #3498DB;
+            --color-secondary: #1ABC9C; --color-white: #FFFFFF; --color-border: #E5E7EB;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        *, ::before, ::after { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; background-color: var(--color-base); color: var(--color-text); }
+        .container { max-width: 1100px; margin-left: auto; margin-right: auto; padding: 0 1.5rem; }
+        section { padding: 5rem 0; }
+        h2 { font-size: 2.75rem; font-weight: 800; margin: 0 0 1rem 0; line-height: 1.2; }
+        h3 { font-size: 2.25rem; font-weight: 700; margin: 0 0 1rem 0; line-height: 1.3; }
+        h4 { font-size: 1.25rem; font-weight: 600; margin: 0 0 1rem 0; color: var(--color-text); }
+        p { margin: 0 0 1rem 0; color: #5a6877; font-size: 1.1rem; }
+        a { color: var(--color-primary); text-decoration: none; font-weight: 600; }
+        .text-center { text-align: center; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem auto; }
+        .grid { display: grid; gap: 2rem; }
+        .header { padding: 1rem 0; background-color: rgba(255, 255, 255, 0.9); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { font-size: 1.5rem; font-weight: 800; } .header-logo span { color: var(--color-primary); }
+        .header-nav a { margin-left: 2rem; font-weight: 600; color: var(--color-text); }
+        .btn { display: inline-block; background: linear-gradient(45deg, var(--color-primary), #2980b9); color: var(--color-white); padding: 0.85rem 2.5rem; border-radius: 9999px; font-weight: 700; border: none; }
+        .card { background-color: var(--color-white); border: 1px solid var(--color-border); border-radius: 0.75rem; padding: 2rem; box-shadow: var(--shadow-sm); }
+        .card h4 { display: flex; align-items: center; gap: 0.75rem; } .card svg { color: var(--color-primary); flex-shrink: 0; }
+        .bg-white { background-color: var(--color-white); }
+        .price-card { text-align: center; height: 100%; display: flex; flex-direction: column; }
+        .price-card-content { flex-grow: 1; }
+        .price-card h5 { font-size: 1.25rem; font-weight: 700; }
+        .price-card .price { font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0; color: var(--color-primary); }
+        .price-card .price span { font-size: 1rem; font-weight: 500; color: #5a6877; }
+        .price-card.featured { border: 2px solid var(--color-primary); position: relative; transform: scale(1.05); z-index: 10; }
+        .featured-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, var(--color-primary), #2980b9); color: var(--color-white); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+        .price-card ul { list-style: none; padding: 0; margin-top: 1.5rem; text-align: left; }
+        .price-card ul li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .kpi-card { background-color: var(--color-white); padding: 1.5rem; border-radius: 0.75rem; text-align: center; box-shadow: var(--shadow-sm); }
+        .kpi-card-value { font-size: 2.5rem; font-weight: 800; color: var(--color-secondary); }
+        .kpi-card-label { font-weight: 600; color: #5a6877; }
+        .chart-placeholder { width: 100%; height: auto; border-radius: 0.75rem; box-shadow: var(--shadow-sm); }
+        .footer { background-color: var(--color-text); color: #aeb9c5; text-align: center; padding: 2rem 0; }
+        .quiz-demo { background-color: var(--color-white); border-radius: 0.75rem; padding: 2rem; box-shadow: var(--shadow-sm); max-width: 700px; margin: auto; }
+        .quiz-question { margin-bottom: 1.5rem; }
+        .quiz-question p { font-size: 1.1rem; font-weight: 600; color: var(--color-text); margin-bottom: 0.75rem; }
+        .quiz-options { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .quiz-option { background-color: #ecf0f1; border: 1px solid var(--color-border); padding: 0.5rem 1rem; border-radius: 9999px; }
+        .quiz-option.selected { background-color: var(--color-secondary); color: var(--color-white); border-color: var(--color-secondary); font-weight: 600; }
+        .team-card { text-align: center; }
+        .team-card img { border-radius: 50%; margin: 0 auto 1rem auto; border: 4px solid var(--color-white); box-shadow: var(--shadow-md); }
+        .team-card .role { color: var(--color-primary); font-weight: 700; margin-top: -0.5rem; }
+        @media (min-width: 768px) { .grid-cols-md-2 { grid-template-columns: repeat(2, 1fr); } .grid-cols-md-3 { grid-template-columns: repeat(3, 1fr); } }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-logo">SoftHair <span>AI</span></div>
+            <nav class="header-nav">
+                <a href="#solucion">Solución</a>
+                <a href="#modelo">Planes</a>
+                <a href="#equipo">Equipo</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="text-center" style="padding: 8rem 0;">
+            <div class="container">
+                <h2 style="font-size: 3.5rem;">Revolucionando el Retail de Belleza</h2>
+                <p style="font-size: 1.25rem; max-width: 700px; margin: 1rem auto 2.5rem auto;">Un software SaaS que transforma la confusión en conversiones seguras, tanto en el <strong>punto de venta físico</strong> como en <strong>tiendas e-commerce</strong>, mediante diagnósticos capilares inteligentes.</p>
+                <a href="#solucion" class="btn">Ver la Demostración</a>
+            </div>
+        </section>
+
+        <section id="solucion" class="bg-white">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Demostración del Diagnóstico Inteligente</h3>
+                    <p>Así es como un cliente interactúa con nuestro sistema. La experiencia se integra perfectamente en <strong>tótems y tablets en tiendas físicas</strong>, o como un widget en <strong>plataformas de e-commerce</strong> para potenciar las ventas online.</p>
+                </div>
+                <div class="quiz-demo">
+                    <div class="quiz-question">
+                        <p>1. ¿Cuál es la forma natural de tu cabello?</p>
+                        <div class="quiz-options"><span class="quiz-option">Liso</span><span class="quiz-option selected">Ondulado</span><span class="quiz-option">Rizado</span><span class="quiz-option">Afro</span></div>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. ¿Cómo sientes tu cuero cabelludo?</p>
+                        <div class="quiz-options"><span class="quiz-option">Normal</span><span class="quiz-option">Graso</span><span class="quiz-option selected">Seco</span><span class="quiz-option">Sensible</span></div>
+                    </div>
+                     <div class="quiz-question">
+                        <p>3. ¿Cuál es tu principal preocupación?</p>
+                        <div class="quiz-options"><span class="quiz-option selected">Frizz</span><span class="quiz-option">Sequedad</span><span class="quiz-option">Daño/Quiebre</span><span class="quiz-option">Caída</span></div>
+                    </div>
+                    <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+                        <h4 style="text-align: center;">Resultado del Diagnóstico</h4>
+                        <div style="background-color: #f0f6fc; padding: 1.5rem; border-radius: 0.5rem; text-align: left; border-left: 4px solid var(--color-primary);">
+                             <p style="font-weight: 600; color: var(--color-text); margin:0;">Recomendación de IA:</p>
+                             <p style="margin:0.5rem 0 0 0;">Basado en tu perfil de cabello <strong>Ondulado</strong>, con cuero cabelludo <strong>Seco</strong> y preocupación por <strong>Frizz</strong>, el <strong>Kit de Hidratación y Control</strong> es ideal para ti.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="modelo">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Planes de Suscripción Flexibles</h3>
+                    <p>Soluciones escalables diseñadas para cada tamaño de negocio, desde salones individuales hasta grandes cadenas de retail.</p>
+                </div>
+                <div class="grid grid-cols-md-3" style="align-items: flex-start;">
+                    <div class="card price-card">
+                        <div class="price-card-content">
+                            <h5>Starter</h5><div class="price">$80<span>/mes</span></div><p>Ideal para salones y tiendas individuales.</p>
+                            <ul><li>✔️ Diagnóstico Interactivo</li><li>✔️ Reportes Básicos</li><li>✔️ Soporte por Email</li></ul>
+                        </div>
+                    </div>
+                    <div class="card price-card featured">
+                        <div class="featured-badge">Más Popular</div>
+                        <div class="price-card-content">
+                            <h5>Business</h5><div class="price">$250<span>/mes</span></div><p>Para cadenas y retailers en crecimiento.</p>
+                            <ul><li>✔️ Todo en Starter, y además:</li><li>✔️ Dashboard de Analítica</li><li>✔️ Personalización de Marca</li><li>✔️ Soporte Prioritario</li></ul>
+                        </div>
+                    </div>
+                    <div class="card price-card">
+                         <div class="price-card-content">
+                            <h5>Enterprise</h5><div class="price">A Consulta</div><p>Soluciones a medida para grandes corporaciones.</p>
+                            <ul><li>✔️ Todo en Business, y además:</li><li>✔️ Integraciones API</li><li>✔️ Soporte Dedicado</li><li>✔️ Desarrollo a Medida</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="bg-white">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Dashboard de Analítica para Empresas</h3>
+                    <p>Transformamos datos en inteligencia de negocio. Nuestros clientes B2B pueden optimizar su stock, entender a sus consumidores y tomar decisiones estratégicas basadas en información real.</p>
+                </div>
+                <div class="grid grid-cols-md-3 gap-6">
+                    <div class="kpi-card"><div class="kpi-card-value">1,245</div><div class="kpi-card-label">Diagnósticos este mes</div></div>
+                    <div class="kpi-card"><div class="kpi-card-value">32%</div><div class="kpi-card-label">Tasa de Conversión</div></div>
+                    <div class="kpi-card"><div class="kpi-card-value">+$8,760</div><div class="kpi-card-label">Ventas Atribuidas</div></div>
+                </div>
+                <div class="grid grid-cols-md-2" style="margin-top: 2rem;">
+                    <img src="https://image-charts.com/chart?cht=bvg&chd=t:400,350,290,205&chxt=x,y&chxl=0:|Liso|Ondulado|Rizado|Afro&chco=3498DB&chs=700x400&chtt=Diagnósticos por Tipo de Cabello" alt="Gráfico de Tipos de Cabello" class="chart-placeholder">
+                    <img src="https://image-charts.com/chart?cht=p&chd=t:350,280,220,180&chdl=Frizz|Sequedad|Daño|Caída&chco=3498DB,1ABC9C,F1C40F,E74C3C&chs=700x400&chtt=Preocupaciones Principales" alt="Gráfico de Preocupaciones" class="chart-placeholder">
+                </div>
+            </div>
+        </section>
+        
+        <section id="equipo">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Equipo Fundador</h3>
+                    <p>La combinación de visión de producto, estrategia de negocio y marketing digital para llevar SoftHair AI al siguiente nivel.</p>
+                </div>
+                <div class="grid grid-cols-md-2" style="max-width: 800px; margin: auto;">
+                    <div class="card team-card">
+                        <img src="https://placehold.co/120x120/3498DB/FFFFFF?text=EA" alt="Foto de Enzo Acosta">
+                        <h4>Enzo Acosta</h4>
+                        <p class="role">Visión de Producto y Estrategia Comercial</p>
+                        <p>Responsable de alinear la tecnología con las necesidades del mercado para maximizar el retorno de inversión.</p>
+                    </div>
+                    <div class="card team-card">
+                        <img src="https://placehold.co/120x120/2C3E50/FFFFFF?text=MN" alt="Foto de Matias Nitti">
+                        <h4>Matias Nitti</h4>
+                        <p class="role">Marketing y Crecimiento</p>
+                        <p>Experto en la creación de estrategias de marca y adquisición de clientes para negocios SaaS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" style="background-color: #34495e; color: #ecf0f1;">
+            <div class="container text-center">
+                <h3>El Futuro de la Belleza es Inteligente. Hablemos.</h3>
+                <p style="color: #bdc3c7;">Estamos listos para responder tus preguntas y explorar cómo podemos crecer juntos.</p>
+                <div style="margin-top: 2rem;"><a href="mailto:enzo.acosta@softhairai.com" class="btn">Contactar por Email</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container"><p style="color: #aeb9c5; margin:0;">&copy; 2025 SoftHair AI. Todos los derechos reservados.</p></div></footer>
+
+</body>
+</html>
